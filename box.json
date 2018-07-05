@@ -1,0 +1,27 @@
+{
+    "name":"ColdBox Paginator",
+    "version":"1.2.1",
+    "author":"Francesco Pepe",
+    "location":"tropicalista/cbox-paginator#v1.2.1",
+    "directory":"",
+    "type":"modules",
+    "homepage":"",
+    "documentation":"",
+    "repository":{
+        "type":"git",
+        "URL":"https://github/tropicalista/cbox-paginator"
+    },
+    "bugs":"https://github/tropicalista/cbox-paginator/issues",
+    "slug":"cbox-paginator",
+    "shortDescription":"A cool ColdBox paginator package",
+    "scripts":{
+        "postVersion":"package set location='tropicalista/cbox-paginator#v`package version`'",
+        "onRelease":"publish",
+        "postPublish":"!git push && !git push --tags"
+    },
+    "ignore":[
+        "**/.*",
+        "test",
+        "tests"
+    ]
+}
