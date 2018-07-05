@@ -9,9 +9,9 @@
     "documentation":"",
     "repository":{
         "type":"git",
-        "URL":"https://github/tropicalista/cbox-paginator"
+        "URL":"https://github.com/tropicalista/cbox-paginator"
     },
-    "bugs":"https://github/tropicalista/cbox-paginator/issues",
+    "bugs":"https://github.com/tropicalista/cbox-paginator/issues",
     "slug":"cbox-paginator",
     "shortDescription":"A cool ColdBox paginator package",
     "scripts":{
