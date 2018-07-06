@@ -1,6 +1,7 @@
 component accessors="true" {
     
     property name="collection" inject="collect@CFCollection";
+    property name="controller" inject="coldbox";
 
     //All of the items being paginated.
     property name="items";
@@ -55,6 +56,7 @@ component accessors="true" {
             parameters = structAppend( variables.query, parameters );
         }
         qstr = Find( "?", getPath() ) > 0 ? "&" : "?";
+
         return variables.path  
         			& qstr 
         			& StructToQueryString( parameters ) 
@@ -100,7 +102,9 @@ component accessors="true" {
     }
 
     public function resolveCurrentPath( default = '/' ){
-        return cgi.request & cgi.SCRIPT_NAME;
+        var event = getController().getRequestService().getContext();
+
+        return  event.getHTMLBaseURL() & event.getCurrentRoutedURL();
     }
 
     public function withPath( path ){
