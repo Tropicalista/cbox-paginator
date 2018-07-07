@@ -13,7 +13,7 @@
         </cfif>
 
         <cfloop array="#args.elements#" index="i" item="element">
-            <cfif !isNull(element) && !isArray(element)>
+            <cfif !len(element) && !isArray(element)>
                 <li class="page-item disabled" aria-disabled="true"><span class="page-link">#element#</span></li>
             </cfif>
 
