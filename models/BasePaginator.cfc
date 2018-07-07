@@ -63,8 +63,8 @@ component accessors="true" {
                     & buildFragment();
     }
 
-    public function getFragment( fragment = null ){
-        if ( isNull( arguments.fragment ) ) {
+    public function getFragment( fragment = "" ){
+        if ( !len( arguments.fragment ) ) {
             return variables.fragment;
         }
 
@@ -73,7 +73,7 @@ component accessors="true" {
         return this;
     }
 
-    public function appends( key, value = null ){
+    public function appends( key, value = "" ){
         if ( isArray( arguments.key ) ) {
             return appendArray( arguments.key );
         }

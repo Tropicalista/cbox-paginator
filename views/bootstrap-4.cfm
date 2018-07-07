@@ -1,6 +1,3 @@
-<cfscript>
-//abort;
-</cfscript>
 <cfoutput>
 <cfif args.paginator.hasPages()>
     <ul class="pagination" role="navigation">

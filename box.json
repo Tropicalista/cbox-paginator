@@ -23,5 +23,11 @@
         "**/.*",
         "test",
         "tests"
-    ]
+    ],
+    "dependencies":{
+        "testbox":"^2.7.0+167"
+    },
+    "installPaths":{
+        "testbox":"testbox"
+    }
 }
