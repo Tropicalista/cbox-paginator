@@ -47,7 +47,7 @@ component extends="BasePaginator" accessors="true" {
             links['first'],
             isArray(links['slider']) ? "..." : "",
             links['slider'],
-            isArray(links['last'].toArray()) ? "..." : "",
+            isArray(links['last']) ? "..." : "",
             links['last'],
         ];
 
