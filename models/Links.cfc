@@ -6,7 +6,7 @@ component {
 
     public function build( paginator, onEachSide = 3 ){
     	variables.paginator = arguments.paginator;
-        return get( onEachSide );
+        return get( arguments.onEachSide );
     }
 
     /**
@@ -16,11 +16,11 @@ component {
      * @return array
      */
     public function get( onEachSide = 3 ){
-        if ( variables.paginator.getLastPage() < ( onEachSide * 2 ) + 6) {
+        if ( variables.paginator.getLastPage() < ( arguments.onEachSide * 2 ) + 6) {
             return getSmallSlider();
         }
 
-        return getUrlSlider( onEachSide );
+        return getUrlSlider( arguments.onEachSide );
     }
 
     /**
@@ -43,7 +43,7 @@ component {
      * @return array
      */
     private function getUrlSlider( onEachSide ){
-        window = onEachSide * 2;
+        var window = onEachSide * 2;
 
         if ( !hasPages() ) {
             return {'first' = "", 'slider' = "", 'last' = ""};
@@ -66,7 +66,7 @@ component {
         // If we have enough room on both sides of the current page to build a slider we
         // will surround it with both the beginning and ending caps, with this window
         // of pages in the middle providing a Google style sliding paginator setup.
-        return getFullSlider( onEachSide );
+        return getFullSlider( arguments.onEachSide );
     }
 
     /**
@@ -77,7 +77,7 @@ component {
      */
     private function getSliderTooCloseToBeginning( window ){
         return {
-            'first' = variables.paginator.getUrlRange( 1, window + 2 ),
+            'first' = variables.paginator.getUrlRange( 1, arguments.window + 2 ),
             'slider' = "",
             'last' = getFinish(),
         };
@@ -91,7 +91,7 @@ component {
      */
     private function getSliderTooCloseToEnding( window ){
         last = variables.paginator.getUrlRange(
-            variables.paginator.getLastPage() - ( window + 2 ),
+            variables.paginator.getLastPage() - ( arguments.window + 2 ),
             variables.paginator.getLastPage()
         );
 
@@ -111,7 +111,7 @@ component {
     private function getFullSlider( onEachSide ){
         return {
             'first'  = getStart(),
-            'slider' = getAdjacentUrlRange( onEachSide ),
+            'slider' = getAdjacentUrlRange( arguments.onEachSide ),
             'last'   = getFinish(),
         };
     }
@@ -124,8 +124,8 @@ component {
      */
     public function getAdjacentUrlRange( onEachSide ){
         return variables.paginator.getUrlRange(
-            currentPage() - onEachSide,
-            currentPage() + onEachSide
+            currentPage() - arguments.onEachSide,
+            currentPage() + arguments.onEachSide
         );
     }
 

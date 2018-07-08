@@ -27,7 +27,7 @@ component accessors="true" {
 	}
 
     public function isValidPageNumber( page ){
-        return page >= 1 && isNumeric(page) !== false;
+        return arguments.page >= 1 && isNumeric( arguments.page ) !== false;
     }
 
     public function previousPageUrl(){
@@ -55,7 +55,7 @@ component accessors="true" {
         if ( structKeyExists( variables, 'query' ) && structCount( getQuery() ) > 0 ) {
             parameters = structAppend( variables.query, parameters );
         }
-        qstr = Find( "?", getPath() ) > 0 ? "&" : "?";
+        var qstr = Find( "?", getPath() ) > 0 ? "&" : "?";
 
         return variables.path  
         			& qstr 
@@ -82,7 +82,7 @@ component accessors="true" {
     }
 
     protected function appendArray( struct keys ){
-        for( k in arguments.keys ){
+        for( var k in arguments.keys ){
         	addQuery( k, keys[k] );
         }
 
@@ -112,7 +112,7 @@ component accessors="true" {
     }
 
     public function buildFragment(){
-        return len(getFragment()) ? '##' & getFragment() : '';
+        return len( getFragment() ) ? '##' & getFragment() : '';
     }
 
     public function firstItem(){
