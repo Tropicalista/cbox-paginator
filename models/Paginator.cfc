@@ -45,9 +45,9 @@ component extends="BasePaginator" accessors="true" {
 		var links = links.build(this);
         var paging = [
             links['first'],
-            !isNull(links['slider']) ? '...' : javacast("null",""),
+            isArray(links['slider']) ? "..." : "",
             links['slider'],
-            !isNull(links['last'].toArray()) ? '...' : javacast("null",""),
+            isArray(links['last'].toArray()) ? "..." : "",
             links['last'],
         ];
 
