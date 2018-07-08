@@ -24,10 +24,14 @@
         "test",
         "tests"
     ],
+    "devDependencies":{
+        "coldbox":"^4.3.0+188",
+        "testbox":"^2.4.0+80"
+    },
     "dependencies":{
-        "testbox":"^2.7.0+167"
     },
     "installPaths":{
-        "testbox":"testbox"
+        "testbox":"testbox",
+        "coldbox":"tests/resources/app/coldbox"
     }
 }
