@@ -1,8 +1,8 @@
 {
     "name":"ColdBox Paginator",
-    "version":"1.5.1",
+    "version":"1.5.3",
     "author":"Francesco Pepe",
-    "location":"tropicalista/cbox-paginator#v1.5.1",
+    "location":"tropicalista/cbox-paginator#v1.5.3",
     "directory":"",
     "type":"modules",
     "homepage":"",
@@ -28,8 +28,7 @@
         "coldbox":"^4.3.0+188",
         "testbox":"^2.4.0+80"
     },
-    "dependencies":{
-    },
+    "dependencies":{},
     "installPaths":{
         "testbox":"testbox",
         "coldbox":"tests/resources/app/coldbox"
